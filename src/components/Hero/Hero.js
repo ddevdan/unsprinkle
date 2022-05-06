@@ -11,7 +11,7 @@ const Hero = () => {
           }
           type="image/avif"
         />
-        <HeroImage src="/images/hero-img.jpg 1x, /images/hero-img@2x.jpg 2x,  /images/hero-img@2x.jpg 3x" />
+        <HeroImage src="/images/hero-img.jpg 1x, /images/hero-img@2x.jpg 2x,  /images/hero-img@2x.jpg 3x" alt="Beautiful brown cat"/>
       </picture>
       <Swoop src="/swoop.svg" />
     </Wrapper>
