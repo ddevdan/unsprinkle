@@ -1,11 +1,22 @@
-import React from 'react';
-import styled from 'styled-components/macro';
+import React from "react";
+import styled from "styled-components/macro";
 
 const PhotoGridItem = ({ id, src, alt, tags }) => {
+  const fixedSrc = src.split(".jpg")[0];
+  // wexor-tmg-turtle@2x.jpg
+  // wexor-tmg-turtle@2x.avif
+
+  const avifDimentions = `${fixedSrc}.avif 1x, ${fixedSrc}@2x.avif 2x, ${fixedSrc}@3x.avif 3x`;
+  const jpgDimentions = `${fixedSrc}.jpg 1x, ${fixedSrc}@2x.jpg 2x, ${fixedSrc}@3x.jpg 3x`;
+
+  console.log({ jpgDimentions });
   return (
     <article>
       <Anchor href={`/photos/${id}`}>
-        <Image src={src} />
+        <figure>
+          <source srcSet={avifDimentions} type="image/avif" />
+          <Image alt={alt} srcSet={jpgDimentions} />
+        </figure>
       </Anchor>
       <Tags>
         {tags.map((tag) => (
