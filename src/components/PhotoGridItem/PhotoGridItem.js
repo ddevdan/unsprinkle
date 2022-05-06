@@ -5,6 +5,7 @@ const PhotoGridItem = ({ id, src, alt, tags }) => {
   const fixedSrc = src.split(".jpg")[0];
   // wexor-tmg-turtle@2x.jpg
   // wexor-tmg-turtle@2x.avif
+  const tagsLength = tags.length - 1;
 
   const avifDimentions = `${fixedSrc}.avif 1x, ${fixedSrc}@2x.avif 2x, ${fixedSrc}@3x.avif 3x`;
   const jpgDimentions = `${fixedSrc}.jpg 1x, ${fixedSrc}@2x.jpg 2x, ${fixedSrc}@3x.jpg 3x`;
@@ -47,6 +48,21 @@ const Tags = styled.ul`
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
+  display: grid;
+
+  justify-items: start;
+  align-items: center;
+  justify-content: start;
+  align-content: center;
+  grid-template-columns: repeat(4, auto);
+
+  & > li:last-child {
+    display: -webkit-box;
+    line-height: 1rem;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1; /* Quantidade de linhas */
+    overflow: hidden;
+  }
 `;
 
 const Tag = styled.li`

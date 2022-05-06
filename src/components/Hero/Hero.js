@@ -30,8 +30,7 @@ const Wrapper = styled.section`
 
 const HeroImage = styled.img`
   display: block;
-  width: 500px;
-  height: 500px;
+  width: 100%;
   max-height: 100%;
 `;
 
