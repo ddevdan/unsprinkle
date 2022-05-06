@@ -39,6 +39,8 @@ const Image = styled.img`
   height: 300px;
   border-radius: 2px;
   margin-bottom: 8px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
 `;
 
 const Tags = styled.ul`
